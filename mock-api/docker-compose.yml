@@ -1,0 +1,37 @@
+services:
+  api-server:
+    image: node:18-alpine
+    working_dir: /app
+    command: sh -c "npm install && node data.js && node server.js"
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - ../assets:/app/assets
+    networks:
+      - dev-net
+      
+  # Swagger UI 서비스 추가
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    ports:
+      - "8082:8080"
+    environment:
+      # 지원자가 브라우저에서 직접 확인할 수 있도록 오픈 API 명세(JSON) 경로 지정
+      # (아래 설명할 swagger.json 파일을 마운트해야 합니다)
+      SWAGGER_JSON: /app/swagger.json
+    volumes:
+      - ./swagger.json:/app/swagger.json
+
+  media-server:
+    image: nginx:alpine
+    ports:
+      - "8081:80"  # 8080 대신 8081 사용 (충돌 회피)
+    volumes:
+      - ../assets:/usr/share/nginx/html:ro
+    networks:
+      - dev-net
+
+networks:
+  dev-net:
+    driver: bridge

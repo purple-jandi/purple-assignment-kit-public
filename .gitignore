@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+pnpm-lock.yaml
+
+# Next.js
+.next/
+out/
+build/
+.env*.local
+
+# Flutter
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+*.g.dart
+*.freezed.dart
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Mock API uploads
+mock-api/uploads/*
+!mock-api/uploads/.gitkeep
+
+# Mock API Data
+mock-api/data/db.json

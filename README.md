@@ -13,12 +13,13 @@
 | :--- | :--- | :--- |
 | **Frontend (Web)** | [web-kit/ 바로가기](./web-kit/) | Next.js, 무한 스크롤, 라우터 동기화, **자율 기능 3개 이상 필수** |
 | **Mobile (Flutter)** | [flutter-kit/ 바로가기](./flutter-kit/) | Riverpod 아키텍처, 멀티파트 업로드, **자율 기능 3개 이상 필수** |
+| **Backend / Full-stack** | [backend-kit/ 바로가기](./backend-kit/) | Spring Boot, PostgreSQL, API 계약, 테스트 및 앱 연동 |
 
 ---
 
 ## 🛠 [STEP 0] 공통 환경 구성 (Mock API)
 
-모든 과제는 로컬에서 구동되는 **가상 API 서버(Mock API)** 연동을 전제로 합니다. 과제 수행 전 반드시 아래 단계를 완료해 주세요.
+Web·Mobile 전형은 로컬에서 구동되는 **가상 API 서버(Mock API)** 연동을 전제로 합니다. 과제 수행 전 반드시 아래 단계를 완료해 주세요.
 
 1. **Docker 설치**: 로컬에 Docker Desktop이 설치되어 있어야 합니다.
 2. **서버 구동**:
@@ -29,6 +30,8 @@
 3. **확인**: 
    - API 서버: `http://localhost:3000`
    - **Swagger UI (명세)**: `http://localhost:8082` (구동 후 가장 먼저 확인해 주세요!)
+
+> Backend / Full-stack 전형은 Mock API 대신 `backend-kit`의 PostgreSQL Docker 환경과 Spring Boot 서버를 사용합니다. 자세한 실행 및 제출 기준은 [backend-kit README](./backend-kit/README.md)를 확인해 주세요.
 
 ---
 

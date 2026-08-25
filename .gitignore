@@ -7,6 +7,7 @@ pnpm-lock.yaml
 .next/
 out/
 build/
+.gradle/
 .env*.local
 
 # Flutter
